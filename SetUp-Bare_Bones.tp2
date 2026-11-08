@@ -1,0 +1,94 @@
+// Replace "Bare_bones" with the actual mod folder name. 
+BACKUP ~backup/Bare_Bones~
+AUTHOR ~grammarsalad~
+//README ~Bare_Bones\README.pdf~
+//VERSION ~0.00.01~
+
+
+ALWAYS
+
+    OUTER_SPRINT ~folder~ ~Bare_bones~ 
+
+END
+
+/* AUTO_TA causes all COMPILE-USING directives to look in the given
+ * directory (with %s replaced by the LANGUAGE directory from below) for
+ * TRA files that match the given D file's name. See COMPILE-USING below
+ * for how this works out. */ 
+AUTO_TRA ~Bare_Bones/tra/%s~
+LANGUAGE ~English~ ~english~
+         ~Bare_Bones/tra/english/setup.tra~
+
+//setup tra guide:
+
+//@0 to @50: groups
+//@51 to @100: subcomponents
+//@101 to @3900: Components
+//@3901 to @1000: error and misc
+// @3000 to @4000: Requirements
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////                                                                          ////////////////////////
+////////////////////////                Group Name: 101-???                     				  ////////////////////////
+////////////////////////                                                                          ////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+///////                                                   ///////
+///////     Components 101-102: Subcomponent Name         ///////
+///////                                                   ///////
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+
+
+//_______________________________
+//
+//	###: Component Name (101)
+//
+//_________________________________________
+
+BEGIN @101  // Install First Component Name  
+SUBCOMPONENT @51 //Mod Name: ???-???: SubGroup Name
+DESIGNATED 101
+GROUP @0  //Group Name 
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @3901 // ~EE games only! For ee games only~
+
+///////////////////////////////////////
+//////////// player modified variables
+
+//call up and read the var categories set by player (included in ALWAYS)
+// LAM b_macro_name
+
+///////////////////////////////////////
+//////////// the actual component
+
+// INCLUDE ~%folder%/components/SUBFOLDER/Setup_Component.tpa~  //
+
+
+//_______________________________
+//
+//	###: Component Name (102)
+//
+//_________________________________________
+
+BEGIN @102  // Install Component Name
+SUBCOMPONENT @51 //Subcomponent Name
+DESIGNATED 102
+GROUP @0  //Group Name
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @3901 // ~EE games only! For ee games only~
+
+///////////////////////////////////////
+//////////// player modified variables
+
+//call up and read the var categories set by player (included in ALWAYS)
+// LAM b_macro_name
+
+///////////////////////////////////////
+//////////// the actual component
+
+// INCLUDE ~%folder%/components/SUBFOLDER/Setup_Component.tpa~  //
